@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            //构造函数 
+            //1. 构造函数的首字母大写 
+            //2. this指向实例化对象
+
+            function Person(name, age, hobby) {
+                  this.name = name;
+                  this.age = age;
+                  this.hobby = function () {
+                        console.log(hobby)
+                  }
+            }
+            //属于 类的本身的是   静态属性和方法
+            Person.num = 0;
+            Person.fn = function () {
+                  console.log("fn")
+            }
+            // New 实例化对象
+            let zhangsan = new Person("张三");
+            Person.num++;
+            console.log(zhangsan.name)
+            console.log(Person.num)
+            let lisi = new Person("李四");
+            Person.num++;
+            console.log(lisi.name)
+            console.log(Person.num)
+      </script>
+</body>
+
+</html>

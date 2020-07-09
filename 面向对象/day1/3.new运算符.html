@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            // 1. 执行函数  
+            // function text() {
+            //       console.log("text")
+            // }
+            // text();
+            // new text();
+            // new text;
+
+            // 2.自动创建一个空的对象
+            // 3.把空的对象和this绑定
+            // 4.如果没有返还，隐式返还this
+
+            function Person(name, age, hobby) {
+                  this.name = name;
+                  this.age = age;
+                  this.hobby = function () {
+                        console.log(hobby)
+                  }
+            }
+            let zhangsan = new Person();
+            console.log(zhangsan.name = '张三')
+            console.log(zhangsan.age = 12)
+            zhangsan.hobby(123)
+
+
+            //与工厂模式进行对比
+            function person(name, age, hobby) {
+                  let obj = {}; //添加原料原料  === this
+                  obj.name = name;
+                  obj.age = age;
+                  obj.hobby = function () {
+                        console.log(hobby);
+                  } //加工原料
+                  return obj //出厂原料
+            }
+            let zhangsan = person("张三", 12, "张三")
+            let lisi = person("李四", 12, "李四")
+            console.log(zhangsan)
+            console.log(lisi)
+      </script>
+</body>
+
+</html>
