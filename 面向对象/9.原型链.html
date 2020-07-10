@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            function foo(name) {
+                  this.name = name
+                  this.age = 20
+                  // this.text = '你好'
+            }
+            foo.prototype.fn = function () {
+                  console.log("fn")
+            }
+            console.log(foo.prototype.__proto__.constructor)
+            console.log(foo.prototype)
+            console.log(foo.__proto__)
+            // foo.prototype.text = '你好'
+            let newFoo = new foo('张撒')
+            // console.log(newFoo.prototype.__proto__.constructor)
+            // console.log(newFoo.prototype)
+            console.log(newFoo.__proto__.__proto__)
+            // console.log(newFoo.text)
+            // let obj = new Object()
+            // console.log(Object.prototype.__proto__)
+      </script>
+</body>
+
+</html>

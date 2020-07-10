@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            
+            let temp;
+            function Person(name, age) {
+                  this.name = name;
+                  this.age = age
+                  // temp = this
+            }
+            Person.prototype.fn = function () {
+                  console.log("fn")
+                  temp = this
+            }
+            console.log(Person.prototype.constructor === Person)
+            let zhangsan = new Person('张三')
+            // zhangsan.fn()
+            // console.log(zhangsan === temp)
+
+            // 工厂模式
+            function person(name, age, hobby) {
+                  let obj = {}; //添加原料原料
+                  obj.name = name;
+                  obj.age = age;
+                  obj.hobby = function () {
+                        console.log(hobby);
+                  } //加工原料
+                  return obj //出厂原料
+            }
+            let zhangsan = person("张三", 12, "张三")
+            let lisi = person("李四", 12, "李四")
+            console.log(zhangsan)
+            console.log(lisi)
+      </script>
+</body>
+
+</html>

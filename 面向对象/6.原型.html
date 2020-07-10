@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            //系统提供一个公共的空间使得内存空间更加节约
+            function Person(name, age) {
+                  this.name = name;
+                  this.age = age;
+                  // this.hobby = function () {
+                  //       console.log("爱好")
+                  // }
+            }
+
+            //功能空间原型 ：原型的this也是指向实例化对象 new
+            Person.prototype.hobby = function () {
+                  console.log("爱好")
+            }
+
+            //原型的固有属性
+            // console.log(Person.prototype.constructor === Person) //true
+            // let zhangsan = new Person('张三');
+            // console.log(zhangsan.constructor === Person) // true
+
+            // let lisi = new Person('李四');
+            // console.log(zhangsan._proto_ === Person.prototype) // true
+            // console.log(zhangsan.hobby === lisi.hobby) //=>false
+            function Tree(name) {
+                  this.name = name
+                  console.log(this)
+            }
+            var theTree = new Tree("this is tree ")
+            console.log(this)
+            // console.log("theTree.constructor is " + theTree.constructor)
+            // console.log(Tree.constructor)
+            // console.log(Tree.prototype)
+            // console.log(theTree.__proto__)
+      </script>
+</body>
+
+</html>
