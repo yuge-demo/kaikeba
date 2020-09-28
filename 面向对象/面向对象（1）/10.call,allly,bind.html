@@ -16,11 +16,11 @@
 
             function foo(name, age) {
                   console.log(this, '姓名是' + name + "年龄是" + age)
+                  console.log(this)
             }
             // foo()
-            let obj = {
-                  name: "张三"
-            }
+            let obj = {}
+            
 
             foo.call(obj, "张三", 20)
             // foo.applyl(obj, ["张三", 20])

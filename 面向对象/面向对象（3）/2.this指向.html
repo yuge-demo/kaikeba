@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            //function : function 的this 谁调用的this指向谁
+
+            //箭头函数 ：箭头函数本身没有this 其this继承声明时所在的作用域this
+
+
+            /*
+            function 的this指向
+             -直接调用
+             - 作为对象的属性调用 ， this指向该对象
+            */
+
+            function fn() {
+                  console.log(this)
+            }
+            fn(); //直接执行函数 this默认情况下指向this
+
+            document.onclick = fn ;
+            document.onclick(); //window
+
+            
+      </script>
+</body>
+
+</html>

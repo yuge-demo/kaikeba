@@ -14,16 +14,18 @@
                   this.name = name;
                   this.age = age;
                   this.money = 10000;
+                  console.log(this)
             }
 
             function Son(name, age) {
                   // Dad.call(this, name, age);
                   // Dad.apply(this,[ name, age]);
                   Dad.bind(this)(name, age);
+                  console.log(this)
             }
             let zhangsan = new Son("张三", 10)
-            console.log(zhangsan)
-            console.log(zhangsan.money)
+            // console.log(zhangsan)
+            // console.log(zhangsan.money)
       </script>
 </body>
 
