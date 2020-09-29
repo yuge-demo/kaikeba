@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+            #box {
+                  position: absolute;
+                  width: 100px;
+                  height: 100px;
+                  background-color: rosybrown;
+            }
+      </style>
+</head>
+
+<body>
+      <div id="box"></div>
+      <script>
+            let box = document.querySelector("#box")
+            document.addEventListener('mousemove' , (e)=>{
+                  let x = e.pageX;
+                  let y = e.pageY;
+
+                  box.style.left = x - 50 +'px'
+                  box.style.top = y -50 +'px'
+
+            })
+      </script>
+</body>
+
+</html>

@@ -19,21 +19,24 @@
                   this.hobby = function () {
                         console.log(hobby)
                   }
+                  console.log(this)
             }
+
             //属于 类的本身的是   静态属性和方法
-            Person.num = 0;
-            Person.fn = function () {
-                  console.log("fn")
-            }
+            // Person.num = 0;
+            // Person.fn = function () {
+            //       console.log("fn")
+            // }
             // New 实例化对象
             let zhangsan = new Person("张三");
-            Person.num++;
-            console.log(zhangsan.name)
-            console.log(Person.num)
-            let lisi = new Person("李四");
-            Person.num++;
-            console.log(lisi.name)
-            console.log(Person.num)
+            console.log(Person.prototype)
+            // Person.num++;
+            // console.log(zhangsan.name)
+            // console.log(Person.num)
+            // let lisi = new Person("李四");
+            // Person.num++;
+            // console.log(lisi.name)
+            // console.log(Person.num)
       </script>
 </body>
 
