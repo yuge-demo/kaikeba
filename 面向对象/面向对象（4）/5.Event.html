@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+
+<body>
+      <script>
+            // 观察者模式： 当对象间存在一对多关系时， 则使用观察者模式（ Observer Pattern）。 
+            // 比如当一个对象被修改的时候，则会自动调用通知它的依赖对象。观察者模式属于行为模式
+            // 事件池     监听器  接触监听  触发器
+
+            // addEventListener
+            // removeEventListener
+
+
+            class Event {
+                  events = {} //事件池记录所有相关的事件及处理函数
+
+                  on(eventName, fn) { //添加一个事件处理 eventName事件名称 fn对应的处理函数
+                        if (!this.events[eventName]) {
+                              this.events[eventName] = []
+                        }
+                        this.events[eventName].push(fn);
+                  }
+                  off(eventName, fn) {
+                        if (!this.events[eventName]) {
+                              //如果没有添加过该事件直接跳出不处理了
+                              return;
+                        }
+                        this.events[eventName] = this.events[eventName].filter(item => item != fn);
+                  }
+
+                  /*
+                  dis[atch 负责把触发到的事件给执行了
+                  */
+
+                  dispatch(eventName) { //触发事件
+                        if (!this.events[eventName]) {
+                              //如果没有添加过该事件直接跳出不处理了
+                              return;
+                        }
+                        this.events[eventName].forEach(item => {
+                              item.call(this)
+                        });
+                  }
+            }
+
+            var a = new Event();
+            console.log(a)
+      </script>
+</body>
+
+</html>
